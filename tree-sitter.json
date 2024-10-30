@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "carbon",
+      "camelcase": "Carbon",
+      "scope": "source.carbon",
+      "path": ".",
+      "file-types": [
+        ".carbon"
+      ],
+      "injection-regex": "^carbon$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Carbon grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Sam Estep"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/samestep/tree-sitter-carbon"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
