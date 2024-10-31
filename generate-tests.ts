@@ -7,9 +7,10 @@ await fs.rm(out, { recursive: true });
 for (const file of await fs.readdir(src, { recursive: true })) {
   const parsed = path.parse(file);
   if (parsed.ext === ".carbon") {
+    const attributes = parsed.base.startsWith("fail_") ? "\n:error" : "";
     const name = `${src}/${file}`;
     const contents = await Bun.file(name).text();
-    const test = `===\n${name}\n===\n\n${contents}\n---\n`;
+    const test = `===\n${name}${attributes}\n===\n\n${contents}\n---\n`;
     const renamed = path.format({ ...parsed, base: "", ext: ".txt" });
     await Bun.write(`${out}/${renamed}`, test);
   }
